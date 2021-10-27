@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Dia Del Cafe</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="description" content="Dia Del Cafe">
+  <meta name="language" content="English">
+
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <h1 class="h1" style="position: relative">Dia Del Cafe</h1>
+      <div class="menu">
+        <div class="menu-content">
+          <label for="menu" class="menu-label"><span class="hamburger"></span></label>
+          <input id="menu" class="menu-toggle" type="checkbox" />
+          <div class="menu-items">
+            <a href="#about">About</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <video class="background-video" src="background-video.mp4" autoplay muted loop></video>
+
+    <article class="article" id="about">
+      <div class="article-content">
+        <h3 class="h3">About</h3>
+        <div class="image-text">
+          <p class="p">
+            Test
+          </p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <script>
+    const navLinks = document.querySelectorAll('.menu-items a');
+    const navToggle = document.querySelectorAll('.menu-toggle')[0]
+
+    Array.from(navLinks).forEach(function (link) {
+      link.addEventListener('click', () => {
+        navToggle.checked = false;
+        return true;
+      });
+    });
+
+  </script>
+</body>
+
+</html>
