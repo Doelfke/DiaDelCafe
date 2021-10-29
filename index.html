@@ -22,8 +22,8 @@
   <div class="page">
 
     <header class="header">
-      <h1 class="h1" style="position: relative">
-        <img src="logo.jpg" alt="Dia Del Cafe" height="50px" width="auto" style="vertical-align: text-top" /> Dia Del Cafe
+      <h1 class="h1 color" style="position: relative">
+        Dia Del Cafe
       </h1>
       <div class="menu">
         <div class="menu-content">
@@ -42,7 +42,7 @@
 
     <article class="article" id="about">
       <div class="article-content">
-        <h3 class="h3">About</h3>
+        <h3 class="h3 color">About</h3>
         <div class="image-text">
           <p class="p">
             Opening in 2018, Dia Del Cafe has been proud to serve the University Heights 
@@ -64,7 +64,7 @@
 
     <article class="article" id="order">
       <div class="article-content">
-        <h3 class="h3">Order</h3>
+        <h3 class="h3 color">Order</h3>
         <div class="image-text">
           <p class="p">
             Stop by or find us on <a class="link" href="https://www.doordash.com/store/dia-del-cafe-san-diego-1213835/" target="_blank">Door Dash</a>.
@@ -75,7 +75,7 @@
 
     <article class="article" id="order">
       <div class="article-content">
-        <h3 class="h3">Contact</h3>
+        <h3 class="h3 color">Contact</h3>
         <div class="image-text">
           <p class="p">
             2873 Adam's Ave
@@ -102,6 +102,28 @@
         navToggle.checked = false;
         return true;
       });
+    });
+
+
+    const thingsToColor = document.querySelectorAll('.color');
+
+    Array.from(thingsToColor).forEach(function (thingToColor) {
+      const textToColor = thingToColor.innerText;
+
+      thingToColor.innerText = '';
+      let newColoredMarkup = '';
+      let nextChars = '';
+      textToColor.split('').forEach((text) => {
+        
+        nextChars += text;
+
+        if (text !== ' ') {
+          newColoredMarkup += '<div>'+ nextChars +'</div>'
+          nextChars = '';
+        }
+
+      })
+      thingToColor.innerHTML = newColoredMarkup;
     });
 
   </script>
